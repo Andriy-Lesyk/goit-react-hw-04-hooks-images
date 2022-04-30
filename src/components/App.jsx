@@ -44,7 +44,7 @@ export default function App() {
           id,
           largeImageURL,
         }));
-        setResponse((prevResponse) => [...prevResponse, ...hits]);
+        setResponse(prevResponse => [...prevResponse, ...hits]);
         setTotal(respon.total);
       })
       .finally(setLoading(false));

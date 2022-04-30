@@ -6,7 +6,9 @@ import { ImageGalleryIt, ImageGalleryItemImg } from './ImageGalleryItem.styles';
 export default function ImageGalleryItem({ srcWeb, modal }) {
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {setShowModal(true);} ;
+  const openModal = () => {
+    setShowModal(true);
+  };
   const closeModal = () => setShowModal(false);
 
   return (
@@ -14,7 +16,9 @@ export default function ImageGalleryItem({ srcWeb, modal }) {
       <ImageGalleryIt onClick={openModal}>
         <ImageGalleryItemImg src={srcWeb} alt="foto" />
       </ImageGalleryIt>
-      {showModal && <Modal modal={modal} showModal={showModal} onClose={closeModal} />}
+      {showModal && (
+        <Modal modal={modal} showModal={showModal} onClose={closeModal} />
+      )}
     </div>
   );
 }
