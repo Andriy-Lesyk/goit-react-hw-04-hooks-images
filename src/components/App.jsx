@@ -19,8 +19,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    if(!search){
-      return
+    if (!search) {
+      return;
     }
     setLoading(true);
     fetch(
@@ -39,14 +39,12 @@ export default function App() {
           alert(`По Вашому запиту нічого не знайдено!`);
           return;
         }
-        const hits = respon.hits.map(
-          ({ webformatURL, id, largeImageURL }) => ({
-            webformatURL,
-            id,
-            largeImageURL,
-          })
-        );
-        setResponse([...response, ...hits]);
+        const hits = respon.hits.map(({ webformatURL, id, largeImageURL }) => ({
+          webformatURL,
+          id,
+          largeImageURL,
+        }));
+        setResponse((prevResponse) => [...prevResponse, ...hits]);
         setTotal(respon.total);
       })
       .finally(setLoading(false));
