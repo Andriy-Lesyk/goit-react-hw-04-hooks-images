@@ -12,6 +12,7 @@ export default function ImageGalleryItem({ srcWeb, modal }) {
   const closeModal = () => setShowModal(false);
 
   return (
+    
     <div>
       <ImageGalleryIt onClick={openModal}>
         <ImageGalleryItemImg src={srcWeb} alt="foto" />

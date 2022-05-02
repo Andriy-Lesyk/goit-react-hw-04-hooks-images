@@ -46,6 +46,7 @@ export default function App() {
         }));
         setResponse(prevResponse => [...prevResponse, ...hits]);
         setTotal(respon.total);
+        console.log('fine')
       })
       .finally(setLoading(false));
   }, [search, page]);
